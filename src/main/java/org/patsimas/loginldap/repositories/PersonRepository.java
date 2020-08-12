@@ -6,7 +6,7 @@ import org.springframework.ldap.core.AttributesMapper;
 import org.springframework.ldap.core.LdapTemplate;
 import org.springframework.ldap.query.LdapQuery;
 import org.springframework.ldap.query.SearchScope;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Repository;
 import org.springframework.util.ObjectUtils;
 import org.springframework.security.ldap.LdapUtils;
 
@@ -15,7 +15,10 @@ import javax.naming.directory.Attributes;
 
 import static org.springframework.ldap.query.LdapQueryBuilder.query;
 
-@Service
+//https://www.baeldung.com/spring-ldap
+//https://memorynotfound.com/spring-boot-spring-ldap-advanced-ldap-queries-example/
+
+@Repository
 public class PersonRepository {
 
     @Autowired
