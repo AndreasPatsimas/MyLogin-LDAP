@@ -11,6 +11,8 @@ public class MyUserDetails implements UserDetails {
 
     private String password;
 
+    private Collection<? extends GrantedAuthority> authorities;
+
     public MyUserDetails() {
         super();
     }
@@ -21,12 +23,14 @@ public class MyUserDetails implements UserDetails {
 
         this.username = person.getUsername();
 
-        this.password = person.password;
+        this.password = person.getPassword();
+
+        this.authorities = person.getAuthorities();
     }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return null;
+        return authorities;
     }
 
     @Override

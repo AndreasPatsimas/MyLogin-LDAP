@@ -35,7 +35,7 @@ public class AuthenticationController {
                 .message(ex.getMessage())
                 .build();
 
-        return new ResponseEntity<AuthenticationErrorResponse>(authenticationErrorResponse, HttpStatus.NOT_ACCEPTABLE);
+        return new ResponseEntity<>(authenticationErrorResponse, HttpStatus.NOT_ACCEPTABLE);
     }
 
 }

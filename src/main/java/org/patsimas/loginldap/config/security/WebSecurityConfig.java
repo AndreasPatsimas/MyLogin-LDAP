@@ -48,7 +48,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .authenticationEntryPoint(unAuthorizedHandler)
                 .and()
                 .authorizeRequests()
-                .antMatchers("/authenticate/**").permitAll()
+                .antMatchers("/authenticate/**", "/hello").permitAll()
+                .antMatchers("/user").hasAnyRole("MEMBER", "OWNER")
+                .antMatchers("/admin").hasRole("OWNER")
                 .anyRequest().authenticated()
                 .and().sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS); // not creating a session

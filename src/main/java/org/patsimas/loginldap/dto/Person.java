@@ -1,6 +1,9 @@
 package org.patsimas.loginldap.dto;
 
 import lombok.*;
+import org.springframework.security.core.GrantedAuthority;
+
+import java.util.List;
 
 @Data
 @Builder
@@ -15,4 +18,6 @@ public class Person {
     String username;
 
     String password;
+
+    private List<GrantedAuthority> authorities;
 }
